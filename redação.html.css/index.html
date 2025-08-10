@@ -2,20 +2,22 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redação do Zero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeoRedação</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="menu">
-      <h1>🚀 Redação do Zero</h1>
+      <h1>🚀 NeoRedação</h1>
       <nav>
         <a href="#introducao">Introdução</a>
         <a href="#desenvolvimento">Desenvolvimento</a>
         <a href="#conclusao">Conclusão</a>
         <a href="#exemplo">Exemplo</a>
         <a href="#dicas">Dicas</a>
+        <a href="#avaliacao">Escreva e Avalie sua Redação</a>
+
       </nav>
     </div>
   </header>
@@ -50,8 +52,9 @@
 
     <section id="exemplo">
       <h2>4. Redação Completa</h2>
-      <button onclick="mostrarRedacao()">Mostrar exemplo completo</button>
-      <pre id="redacao-completa"></pre>
+      <button onclick="mostrarModeloCompleto('base')">Ver modelo base</button>
+      <button onclick="mostrarModeloCompleto('nota1000')">Ver redação nota 1000</button>
+      <div id="redacao-completa" class="redacao-box"></div>
     </section>
 
     <section id="dicas">
@@ -59,10 +62,17 @@
       <button onclick="mostrarDica()">Clique para uma dica</button>
       <p id="dicaTexto"></p>
     </section>
+
+    <section id="avaliacao">
+      <h2>6. Escreva e Avalie sua Redação</h2>
+      <textarea id="textoRedacao" placeholder="Escreva sua redação aqui..." rows="10"></textarea><br />
+      <button onclick="avaliarRedacao()">Avaliar Redação</button>
+      <p id="resultadoAvaliacao"></p>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Redação do Zero | Desenvolvido por Kerlon</p>
+    <p>© 2025 NeoRedação | Desenvolvido por Kerlon</p>
   </footer>
 
   <script src="script.js"></script>

@@ -70,6 +70,7 @@ button {
   font-weight: bold;
   margin-top: 10px;
   transition: 0.3s;
+  margin-right: 10px;
 }
 
 button:hover {
@@ -86,10 +87,51 @@ footer {
   margin-top: 50px;
 }
 
-pre {
-  background-color: #111222;
-  color: #f0f0f0;
-  padding: 20px;
+.redacao-box {
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  padding: 25px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 250px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+#avaliacao textarea {
+  width: 100%;
+  max-width: 800px;
+  padding: 12px;
+  font-size: 1rem;
   border-radius: 10px;
-  overflow-x: auto;
+  border: 2px solid #00e6ff;
+  background-color: #1b1f3b;
+  color: #f0f0f0;
+  resize: vertical;
+  margin-top: 10px;
+}
+
+#avaliacao button {
+  background-color: #00e6ff;
+  color: #1b1f3b;
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#avaliacao button:hover {
+  background-color: #00c3cc;
+}
+
+#resultadoAvaliacao {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00e6ff;
 }
