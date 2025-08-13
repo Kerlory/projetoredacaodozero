@@ -1,8 +1,216 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: #f0f0f0;
+  background: linear-gradient(135deg, #b0b0b0, #d2b48c, #f5e8c7);
+  color: #000000;
+}
+
+/* SPLASH INTRO */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 15%),
+    linear-gradient(135deg, #b0b0b0 0%, #d2b48c 45%, #f5e8c7 100%);
+  backdrop-filter: blur(3px);
+  color: #e6fbff;
+}
+
+#splash img.splash-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5) blur(1.5px);
+  /* escurece e dá blur para destacar texto */
+  pointer-events: none;
+  /* evita que a imagem capture cliques */
+}
+
+.splash-inner {
+  text-align: center;
+  padding: 40px;
+  border-radius: 14px;
+  transform: translateY(0);
+  animation: splashEntrance 900ms cubic-bezier(.2, .9, .3, 1);
+}
+
+.splash-logo h1 {
+  font-size: 3.2rem;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #ff0000;
+  text-shadow: 0 6px 28px rgba(255, 0, 0, 0.08);
+  filter: drop-shadow(0 6px 18px rgba(255, 0, 0, 0.06));
+  transform-origin: center;
+  animation: logoPulse 2000ms infinite ease-in-out;
+}
+
+.splash-logo .tagline {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.splash-loader {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ff0000;
+  border-radius: 50%;
+  opacity: 0.85;
+  transform: scale(0.8);
+  animation: blink 900ms infinite ease-in-out;
+}
+
+.dot2 {
+  animation-delay: 150ms;
+}
+
+.dot3 {
+  animation-delay: 300ms;
+}
+
+#skipSplash {
+  margin-top: 22px;
+  background: transparent;
+  border: 1px solid rgba(255, 0, 0, 0.16);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .15s ease, background .15s ease;
+}
+
+#skipSplash:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 0, 0, 0.03);
+}
+
+/* ANIMAÇÕES */
+@keyframes blink {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 6px 18px rgba(255, 0, 0, 0.04));
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.02);
+    filter: drop-shadow(0 18px 36px rgba(255, 0, 0, 0.08));
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splashExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes splashEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(.995);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* quando remover visualmente, aplicamos classe .fadeout para animar */
+#splash.fadeout {
+  animation: splashExit 500ms forwards cubic-bezier(.2, .9, .3, 1);
+}
+
+/*Detalhes da logo SR*/
+.logo-sr {
+  position: absolute;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #ff0000;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.53);
+  cursor: default;
+  user-select: none;
+}
+
+/* Detalhe geométrico: círculo sutil atrás das letras */
+.logo-sr .circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 70%;
+  border: 5px solid #d2b48c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
+/* Um efeito hover simples para dar vida */
+.logo-sr:hover {
+  color: #b0b0b0;
+  text-shadow: 0 0 12px rgba(176, 176, 176, 0.73);
+}
+
+.header-container {
+  position: relative;
+  height: 100px;
+  /* Ajuste conforme o tamanho do seu header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* centraliza o conteúdo principal (site-name) */
+  padding: 0 20px;
+  background: #d2b48c;
+  /* só pra você visualizar, pode tirar */
 }
 
 header {
@@ -12,30 +220,31 @@ header {
 
 .menu h1 {
   font-size: 2.2rem;
-  color: #00e6ff;
+  color: #ff0000;
   margin-bottom: 10px;
 }
 
 nav {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 20px;
+  padding: 20px 30px;
 }
 
 nav a {
   text-decoration: none;
-  color: #00d9ff;
+  color: #000000;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px 20px;
+  background: #f5e8c7;
+  padding: 8px 16px;
+  /* tamanho menor */
   border-radius: 20px;
   transition: background 0.3s, transform 0.2s;
 }
 
 nav a:hover {
-  background: #00d9ff;
-  color: #1b1f3b;
+  background: #FF0000;
+  color: #FFFFFF;
   transform: scale(1.05);
 }
 
@@ -46,12 +255,18 @@ main {
 }
 
 #apresentacao {
-  background-color: rgba(0, 217, 255, 0.04);
-  border: 1px solid rgba(0, 217, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 25px;
   border-radius: 15px;
-  margin-bottom: 50px;
-  box-shadow: 0 0 12px rgba(0, 230, 255, 0.05);
+  margin-bottom: 70px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+#apresentacao:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
 }
 
 section {
@@ -59,17 +274,17 @@ section {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 h2 {
-  color: #00e6ff;
+  color: #ff0000;
   margin-bottom: 10px;
 }
 
 button {
-  background-color: #00e6ff;
-  color: #1b1f3b;
+  background-color: #d3b48c;
+  color: #000000;
   border: none;
   padding: 10px 16px;
   border-radius: 10px;
@@ -81,13 +296,13 @@ button {
 }
 
 button:hover {
-  background-color: #00c3cc;
+  background-color: #b0b0b0;
   transform: scale(1.05);
 }
 
 footer {
-  background-color: #1b1f3b;
-  color: #ccc;
+  background-color: #f5e8c7;
+  color: #000000;
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
@@ -95,8 +310,8 @@ footer {
 }
 
 .redacao-box {
-  background: rgba(0, 217, 255, 0.08);
-  border: 1px solid rgba(0, 217, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 25px;
   border-radius: 12px;
   font-size: 1.05rem;
@@ -107,218 +322,12 @@ footer {
   max-width: 100%;
   overflow-wrap: break-word;
 }
-#avaliacao textarea {
-  width: 100%;
-  max-width: 800px;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: 2px solid #00e6ff;
-  background-color: #1b1f3b;
-  color: #f0f0f0;
-  resize: vertical;
-  margin-top: 10px;
-}
-
-#avaliacao button {
-  background-color: #00e6ff;
-  color: #1b1f3b;
-  padding: 12px 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-#avaliacao button:hover {
-  background-color: #00c3cc;
-}
-
-#resultadoAvaliacao {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #00e6ff;
-}
-/* SPLASH INTRO */
-#splash {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at 20% 20%, rgba(0,217,255,0.08), transparent 15%),
-              linear-gradient(135deg, #0b1020 0%, #2b1b4a 45%, #110b2a 100%);
-  backdrop-filter: blur(3px);
-  color: #e6fbff;
-}
-
-.splash-inner {
-  text-align: center;
-  padding: 40px;
-  border-radius: 14px;
-  transform: translateY(0);
-  animation: splashEntrance 900ms cubic-bezier(.2,.9,.3,1);
-}
-
-.splash-logo h1 {
-  font-size: 3.2rem;
-  margin: 0;
-  letter-spacing: 1px;
-  color: #00e6ff;
-  text-shadow: 0 6px 28px rgba(0, 214, 255, 0.08);
-  filter: drop-shadow(0 6px 18px rgba(0, 200, 255, 0.06));
-  transform-origin: center;
-  animation: logoPulse 2000ms infinite ease-in-out;
-}
-
-.splash-logo .tagline {
-  margin-top: 12px;
-  color: rgba(230,251,255,0.9);
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-
-.splash-loader {
-  margin-top: 20px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-}
-
-.dot {
-  width:10px;
-  height:10px;
-  background: #00e6ff;
-  border-radius:50%;
-  opacity:0.85;
-  transform: scale(0.8);
-  animation: blink 900ms infinite ease-in-out;
-}
-
-.dot2 { animation-delay: 150ms; }
-.dot3 { animation-delay: 300ms; }
-
-#skipSplash {
-  margin-top: 22px;
-  background: transparent;
-  border: 1px solid rgba(0,230,255,0.16);
-  color: #dffcff;
-  padding: 8px 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform .15s ease, background .15s ease;
-}
-#skipSplash:hover { transform: translateY(-3px); background: rgba(0,230,255,0.03); }
-
-/* ANIMAÇÕES */
-@keyframes blink {
-  0% { transform: scale(0.8); opacity: 0.6; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(0.8); opacity: 0.6; }
-}
-@keyframes logoPulse {
-  0% { transform: translateY(0) scale(1); filter: drop-shadow(0 6px 18px rgba(0,200,255,0.04)); }
-  50% { transform: translateY(-4px) scale(1.02); filter: drop-shadow(0 18px 36px rgba(0,200,255,0.08)); }
-  100% { transform: translateY(0) scale(1); }
-}
-@keyframes splashExit {
-  0% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.98); }
-}
-@keyframes splashEntrance {
-  0% { opacity: 0; transform: translateY(8px) scale(.995); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* quando remover visualmente, aplicamos classe .fadeout para animar */
-#splash.fadeout {
-  animation: splashExit 500ms forwards cubic-bezier(.2,.9,.3,1);
-}
-.logo-nr {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    color: #00e6ff;
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 8px #00e6ff88;
-    cursor: default;
-    user-select: none;
-  }
-
-  /* Detalhe geométrico: círculo sutil atrás das letras */
-  .logo-nr .circle {
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    border: 2px solid #00e6ff55;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  /* Um efeito hover simples para dar vida */
-  .logo-nr:hover {
-    color: #00c3cc;
-    text-shadow: 0 0 12px #00c3ccbb;
-  }
-.header-container {
-  position: relative;
-  height: 100px; /* Ajuste conforme o tamanho do seu header */
-  display: flex;
-  align-items: center;
-  justify-content: center; /* centraliza o conteúdo principal (site-name) */
-  padding: 0 20px;
-  background: #3919ad; /* só pra você visualizar, pode tirar */
-}
-
-/* Logo NR fixa à esquerda */
-.logo-nr {
-  position: absolute;
-  left: 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 48px;
-  color: #00e6ff;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 8px #00e6ff88;
-  cursor: default;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-}
-
-.logo-nr .circle {
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  border: 2px solid #00e6ff55;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.logo-nr:hover {
-  color: #00c3cc;
-  text-shadow: 0 0 12px #00c3ccbb;
-}
 
 /* Nome do site centralizado */
 .site-name {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 32px;
-  color: #00e6ff;
+  color: #ff0000;
   user-select: none;
 }

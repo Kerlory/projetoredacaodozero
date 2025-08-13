@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NeoRedação</title>
+  <title>StartRedação</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div id="splash">
+    <img src="redação.jpg" alt="Fundo decorativo NeoRedação" class="splash-bg" />
     <div class="splash-inner">
       <div class="splash-logo">
-        <h1>NeoRedação</h1>
-        <p class="tagline">Aprenda a escrever do zero — rápido, claro e moderno</p>
+        <h1>StartRedação</h1>
+        <p class="tagline">Da folha em branco a uma redação completa</p>
       </div>
       <div class="splash-loader">
         <span class="dot dot1"></span>
@@ -21,41 +24,45 @@
       </div>
     </div>
   </div>
-  
+
   <header class="header-logo-container">
-    <div class="logo-nr">
-      <span>N</span><span>R</span>
+    <div class="logo-sr">
+      <span>S</span><span>R</span>
       <div class="circle"></div>
     </div>
   </header>
 
   <header>
     <div class="menu">
-      <h1>✏️ NeoRedação</h1>
+      <h1>✏️ StartRedação</h1>
       <nav>
         <a href="#introducao">Introdução</a>
         <a href="#desenvolvimento">Desenvolvimento</a>
         <a href="#conclusao">Conclusão</a>
         <a href="#exemplo">Exemplo</a>
         <a href="#dicas">Dicas</a>
-        <a href="#avaliacao">Escreva e Avalie sua Redação</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section id="apresentacao">
-      <h2>👋 Bem-vindo ao NeoRedação</h2>
-      <p> O <strong>NeoRedação</strong> foi desenvolvido para auxiliar estudantes, concurseiros e vestibulandos a produzir uma redação do zero.
-        Nosso objetivo é tornar o processo de aprendizagem da escrita argumentativa mais <em>acessível, direto e prático</em>.
-      </p> 
-      <p>Aqui você encontra explicações simples sobre cada parte da redação, modelos prontos, dicas valiosas e até uma ferramenta de avaliação automática para treinar à vontade. </p>
+      <h2>👋 Bem-vindo ao StartRedação</h2>
+      <p> O <strong>StartRedação</strong> foi desenvolvido para auxiliar estudantes, concurseiros e vestibulandos a
+        produzir uma redação do zero.
+        Nosso objetivo é tornar o processo de aprendizagem da escrita argumentativa mais <em>acessível, direto e
+          prático</em>.
+      </p>
+      <p>Aqui você encontra explicações simples sobre cada parte da redação, modelos prontos, dicas valiosas e até uma
+        ferramenta de avaliação automática para treinar à vontade. </p>
       <p>Comece explorando os tópicos abaixo e transforme sua forma de escrever!</p>
     </section>
     <section id="introducao">
       <h2>1. Introdução</h2>
       <p>
-        A introdução é o primeiro contato do leitor com sua ideia. Aqui você deve apresentar o tema e os argumentos principais. Uma boa dica é iniciar com um repertório sociocultural: filmes, dados ou eventos históricos ajudam a prender a atenção.
+        A introdução é o primeiro contato do leitor com sua ideia. Aqui você deve apresentar o tema e os argumentos
+        principais. Uma boa dica é iniciar com um repertório sociocultural: filmes, dados ou eventos históricos ajudam a
+        prender a atenção.
       </p>
       <button onclick="mostrarModelo('intro')">Ver exemplo de introdução</button>
       <p id="intro-modelo"></p>
@@ -64,7 +71,8 @@
     <section id="desenvolvimento">
       <h2>2. Desenvolvimento</h2>
       <p>
-        Cada parágrafo deve desenvolver um argumento apresentado na introdução. Use dados, fatos e conectivos para manter a coerência.
+        Cada parágrafo deve desenvolver um argumento apresentado na introdução. Use dados, fatos e conectivos para
+        manter a coerência.
       </p>
       <button onclick="mostrarModelo('desenv')">Ver exemplo de desenvolvimento</button>
       <p id="desenv-modelo"></p>
@@ -73,7 +81,8 @@
     <section id="conclusao">
       <h2>3. Conclusão</h2>
       <p>
-        Retome o problema abordado e apresente uma solução clara. Use a estrutura: <strong>Quem</strong> vai fazer <strong>o quê</strong>, <strong>como</strong> e <strong>para quê</strong>.
+        Retome o problema abordado e apresente uma solução clara. Use a estrutura: <strong>Quem</strong> vai fazer
+        <strong>o quê</strong>, <strong>como</strong> e <strong>para quê</strong>.
       </p>
       <button onclick="mostrarModelo('conc')">Ver exemplo de conclusão</button>
       <p id="conc-modelo"></p>
@@ -92,18 +101,13 @@
       <p id="dicaTexto"></p>
     </section>
 
-    <section id="avaliacao">
-      <h2>6. Escreva e Avalie sua Redação</h2>
-      <textarea id="textoRedacao" placeholder="Escreva sua redação aqui..." rows="10"></textarea><br />
-      <button onclick="avaliarRedacao()">Avaliar Redação</button>
-      <p id="resultadoAvaliacao"></p>
-    </section>
   </main>
 
   <footer>
-    <p>© 2025 NeoRedação | Desenvolvido por Kerlon</p>
+    <p>© 2025 StartRedação | Desenvolvido por Kerlon</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>
