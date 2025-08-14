@@ -1,24 +1,3 @@
-
-document.addEventListener("DOMContentLoaded", () => {
-  const splash = document.getElementById("splash");
-  if (!splash) return;
-
-  const DURATION = 3500;
-
-  function fecharSplash() {
-    splash.classList.add("fadeout");
-    splash.addEventListener("animationend", () => {
-      splash.remove();
-      const main = document.querySelector("main");
-      if (main) main.scrollIntoView({ behavior: "smooth" });
-    }, { once: true });
-  }
-
-  setTimeout(() => {
-    fecharSplash();
-  }, DURATION);
-});
-
 function mostrarModelo(tipo) {
   let idAlvo = "";
   let texto = "";

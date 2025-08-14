@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>StartRedação</title>
+  <title>Redação do Zero</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;500&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
   <div id="splash">
-    <img src="redação.jpg" alt="Fundo decorativo NeoRedação" class="splash-bg" />
+    <img src="redação.jpg" alt="Fundo decorativo Redação do zero" class="splash-bg" />
     <div class="splash-inner">
       <div class="splash-logo">
-        <h1>StartRedação</h1>
+        <h1>Redação do Zero</h1>
         <p class="tagline">Da folha em branco a uma redação completa</p>
       </div>
       <div class="splash-loader">
@@ -25,54 +26,61 @@
     </div>
   </div>
 
-  <header class="header-logo-container">
-    <div class="logo-sr">
-      <span>S</span><span>R</span>
-      <div class="circle"></div>
-    </div>
+  <header class="topo-site">
+    <div class="logo-texto">✏️ Redação do Zero</div>
+    <nav>
+
+      <a href="#apresentacao">Apresentação</a>
+      <a href="#introducao">Introdução</a>
+      <a href="#desenvolvimento">Desenvolvimento</a>
+      <a href="#conclusao">Conclusão</a>
+      <a href="#exemplo">Exemplo</a>
+      <a href="#dicas">Dicas</a>
+    </nav>
   </header>
 
-  <header>
-    <div class="menu">
-      <h1>✏️ StartRedação</h1>
-      <nav>
-        <a href="#introducao">Introdução</a>
-        <a href="#desenvolvimento">Desenvolvimento</a>
-        <a href="#conclusao">Conclusão</a>
-        <a href="#exemplo">Exemplo</a>
-        <a href="#dicas">Dicas</a>
-      </nav>
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span>FAÇA O FUTURO</span> POSSÍVEL,<br><em>A SUA REDAÇÃO É SUA!</em></h1>
+      <p>Aprenda, pratique e desenvolva suas habilidades de escrita com nossas dicas e modelos.</p>
     </div>
-  </header>
+    <div class="hero-shape"></div>
+  </section>
 
   <main>
     <section id="apresentacao">
-      <h2>👋 Bem-vindo ao StartRedação</h2>
-      <p> O <strong>StartRedação</strong> foi desenvolvido para auxiliar estudantes, concurseiros e vestibulandos a
-        produzir uma redação do zero.
-        Nosso objetivo é tornar o processo de aprendizagem da escrita argumentativa mais <em>acessível, direto e
-          prático</em>.
-      </p>
-      <p>Aqui você encontra explicações simples sobre cada parte da redação, modelos prontos, dicas valiosas e até uma
-        ferramenta de avaliação automática para treinar à vontade. </p>
+      <h2>👋 Bem-vindo a Redação do Zero</h2>
+      <p>O <strong>Redação do Zero</strong> foi desenvolvido para ajudar pessoas que nunca escreveram uma redação a
+        construir seus próprios textos do zero, passo a passo.</p>
+      <p>Nosso objetivo é guiar você para dominar a escrita argumentativa de forma clara, prática e acessível.</p>
+      <p>Aqui você encontra explicações simples sobre cada parte da redação, modelos prontos e dicas valiosas sobre como
+        evoluir cada vez mais na escrita.</p>
       <p>Comece explorando os tópicos abaixo e transforme sua forma de escrever!</p>
     </section>
+
     <section id="introducao">
       <h2>1. Introdução</h2>
       <p>
-        A introdução é o primeiro contato do leitor com sua ideia. Aqui você deve apresentar o tema e os argumentos
-        principais. Uma boa dica é iniciar com um repertório sociocultural: filmes, dados ou eventos históricos ajudam a
-        prender a atenção.
+        A introdução é a porta de entrada para o seu texto, sendo o primeiro contato do leitor com a sua ideia central.
+        Nesse espaço, é fundamental apresentar o tema de forma clara e envolvente, além de delinear os principais
+        argumentos que serão desenvolvidos ao longo da redação. Uma estratégia eficaz é começar com um repertório
+        sociocultural, como uma citação, uma música ou um filme, que contextualize o assunto e desperte o interesse do
+        leitor. Dessa forma, você estabelece uma conexão imediata e prepara o terreno para uma argumentação sólida e
+        coerente.
       </p>
-      <button onclick="mostrarModelo('intro')">Ver exemplo de introdução</button>
+      <button onclick="mostrarModelo('intro')">Ver modelo de introdução</button>
       <p id="intro-modelo"></p>
     </section>
 
     <section id="desenvolvimento">
       <h2>2. Desenvolvimento</h2>
       <p>
-        Cada parágrafo deve desenvolver um argumento apresentado na introdução. Use dados, fatos e conectivos para
-        manter a coerência.
+        Cada parágrafo do seu texto deve se concentrar em desenvolver um dos argumentos apresentados na introdução. Para
+        isso, é essencial utilizar dados, fatos e exemplos concretos que sustentem suas afirmações e tornem sua
+        argumentação mais persuasiva. Além disso, o uso de conectivos é crucial para garantir a fluidez e a coerência
+        entre as ideias, permitindo que o leitor acompanhe seu raciocínio de forma clara. Ao estruturar seus parágrafos
+        dessa maneira, você cria uma narrativa lógica e coesa, que reforça a validade dos seus argumentos e enriquece a
+        discussão proposta.
       </p>
       <button onclick="mostrarModelo('desenv')">Ver exemplo de desenvolvimento</button>
       <p id="desenv-modelo"></p>
@@ -81,8 +89,8 @@
     <section id="conclusao">
       <h2>3. Conclusão</h2>
       <p>
-        Retome o problema abordado e apresente uma solução clara. Use a estrutura: <strong>Quem</strong> vai fazer
-        <strong>o quê</strong>, <strong>como</strong> e <strong>para quê</strong>.
+        Retome o problema abordado e apresente uma solução clara usando a estrutura: <strong>Quem</strong>, <strong>o
+          quê</strong>, <strong>como</strong> e <strong>para quê</strong>.
       </p>
       <button onclick="mostrarModelo('conc')">Ver exemplo de conclusão</button>
       <p id="conc-modelo"></p>
@@ -100,7 +108,6 @@
       <button onclick="mostrarDica()">Clique para uma dica</button>
       <p id="dicaTexto"></p>
     </section>
-
   </main>
 
   <footer>
