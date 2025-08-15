@@ -18,15 +18,16 @@ body {
 }
 
 .topo-site {
-  display: flex;
-  align-items: center;
-  padding: 18px 40px;
-  background: transparent;
   position: absolute;
   top: 0;
-  width: 100%;
-  z-index: 10;
-  gap: 10px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background: transparent;
 }
 
 .topo-site nav {
@@ -37,8 +38,6 @@ body {
   gap: 10px;
   margin-left: 500px;
 }
-
-
 
 .logo-texto {
   font-family: 'Montserrat', sans-serif;

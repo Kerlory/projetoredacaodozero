@@ -10,7 +10,10 @@ function mostrarModelo(tipo) {
     texto = "Primeiramente, é necessário destacar que a ausência de políticas públicas eficazes contribui para a manutenção do problema. De acordo com dados de instituições de pesquisa, a falta de investimento e de estratégias abrangentes dificulta a solução, afetando diretamente a qualidade de vida da população. Além disso, essa lacuna gera desigualdade e perpetua situações de vulnerabilidade social.\n\nOutro aspecto relevante é a influência da desinformação. Em um contexto de rápido acesso à internet, informações falsas ou superficiais moldam opiniões e dificultam o entendimento crítico sobre o tema. Assim, a conscientização e a promoção de debates fundamentados tornam-se passos essenciais para qualquer avanço.";
   } else if (tipo === 'conc') {
     idAlvo = "conc-modelo";
-    texto = "Portanto, é imprescindível que o Estado, por meio de órgãos competentes, desenvolva campanhas educativas e invista em políticas públicas integradas, com a participação da sociedade civil. Dessa forma, será possível criar um ambiente favorável à superação de desafios e à construção de uma sociedade mais justa e igualitária.";
+    texto = "Portanto, para resolver de maneira efetiva [o problema abordado], é fundamental que [quem está envolvido ou será beneficiado] se comprometa a [o quê será feito para solucionar o problema], utilizando estratégias bem definidas, como [como essa ação será realizada]. Esse compromisso deve ser mantido com o objetivo claro de [para quê essa solução existe / qual o objetivo final], buscando não apenas uma solução imediata, mas impactos positivos duradouros.";
+  } else if (tipo === 'exem3') {
+    idAlvo = "conc-modelo";
+    texto = "Portanto, para resolver de maneira efetiva o problema da poluição ambiental, é fundamental que governos, empresas e comunidades locais se comprometam a promover campanhas educativas abrangentes e implementar políticas de controle eficazes, utilizando estratégias bem definidas, como a conscientização pública contínua e a criação de leis ambientais rigorosas e fiscalizadas. Esse compromisso deve ser mantido com o objetivo claro de garantir a preservação dos recursos naturais para as futuras gerações, além de promover um ambiente saudável e equilibrado para toda a população.";
   }
 
   const el = document.getElementById(idAlvo);
@@ -51,8 +54,6 @@ Em suma, conclui-se que a desvalorização da cultura africana está diretamente
     el.innerText = redacao;
   }
 }
-
-
 
 const dicas = [
   "Crie sua própria contextualização",
