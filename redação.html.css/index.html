@@ -12,17 +12,13 @@
 
 <body>
   <div id="splash">
-    <img src="redação.jpg" alt="Fundo decorativo Redação do zero" class="splash-bg" />
+    <img src="redação.jpg" alt="Carregando..." class="splash-bg" />
     <div class="splash-inner">
       <div class="splash-logo">
         <h1>Redação do Zero</h1>
-        <p class="tagline">Da folha em branco a uma redação completa</p>
+        <p>Da folha em branco a uma redação completa</p>
       </div>
-      <div class="splash-loader">
-        <span class="dot dot1"></span>
-        <span class="dot dot2"></span>
-        <span class="dot dot3"></span>
-      </div>
+      <div class="splash-loader spinner"></div> <!-- loader spinner -->
     </div>
   </div>
 
@@ -41,8 +37,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1><span>FAÇA O FUTURO</span> POSSÍVEL,<br><em>A SUA REDAÇÃO É SUA!</em></h1>
-      <p>Aprenda, pratique e desenvolva suas habilidades de escrita com nossas dicas e modelos.</p>
+      <h1><span>APRENDA, PRATIQUE E EVOLUA</span><br><em>Sua redação, seu diferencial!</em></h1>
+      <p>Bora aprender, treinar e arrasar na escrita com nossas dicas e modelos super práticos?</p>
     </div>
     <div class="hero-shape"></div>
   </section>
@@ -71,7 +67,8 @@
         leitor. Dessa forma, você estabelece uma conexão imediata e prepara o terreno para uma argumentação sólida e
         coerente.
       </p>
-      <button onclick="mostrarModelo('intro')">Ver modelo de introdução</button>
+      <button onclick="mostrarModelo('intro')">Ver estrutura de introdução</button>
+      <button onclick="mostrarModelo('exem1')">Ver exemplo pronto</button>
       <p id="intro-modelo"></p>
     </section>
 
@@ -85,7 +82,8 @@
         dessa maneira, você cria uma narrativa lógica e coesa, que reforça a validade dos seus argumentos e enriquece a
         discussão proposta.
       </p>
-      <button onclick="mostrarModelo('desenv')">Ver modelo de desenvolvimento</button>
+      <button onclick="mostrarModelo('desenv')">Ver estrutura de desenvolvimento</button>
+      <button onclick="mostrarModelo('exem2')">Ver exemplo pronto</button>
       <p id="desenv-modelo"></p>
     </section>
 
@@ -98,16 +96,20 @@
         <strong>como</strong> essa ação será realizada, e
         <strong>para quê</strong> essa solução existe (qual o objetivo).
       </p>
-      <button onclick="mostrarModelo('conc')">Ver modelo de conclusão</button>
+      <button onclick="mostrarModelo('conc')">Ver estrutura de conclusão</button>
       <button onclick="mostrarModelo('exem3')">Ver exemplo de conclusão</button>
       <p id="conc-modelo"></p>
     </section>
 
     <section id="exemplo">
       <h2>4. Redação Completa</h2>
-      <button onclick="mostrarModeloCompleto('base')">Ver modelo base</button>
-      <button onclick="mostrarModeloCompleto('nota1000')">Ver redação pronta</button>
-      <div id="redacao-completa" class="redacao-box"></div>
+      <p>
+        Agora vamos ver uma estrutura de redação completa que utiliza as estruturas que mostramos na introdução,
+        desenvolvimento e conclusão:
+      </p>
+      <button onclick="mostrarModelo('reda')">Ver estrutura</button>
+      <button onclick="mostrarModelo('exem4')">Ver exemplo pronta</button>
+      <p id="reda-modelo"></p>
     </section>
 
     <section id="dicas">

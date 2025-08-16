@@ -1,57 +1,55 @@
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+
+  // bloqueia scroll enquanto carrega
+  document.body.style.overflow = "hidden";
+
+  // tempo mínimo de exibição (3000ms = 3s)
+  setTimeout(() => {
+    splash.classList.add("hidden");
+    setTimeout(() => {
+      splash.style.display = "none";
+      document.body.style.overflow = "auto"; // libera scroll
+    }, 600); // tempo do fade-out
+  }, 3000);
+});
+
+
+
 function mostrarModelo(tipo) {
   let idAlvo = "";
   let texto = "";
 
   if (tipo === 'intro') {
     idAlvo = "intro-modelo";
-    texto = "[Contextualização]. No Brasil contemporâneo, percebe-se que [tema aqui] representa um desafio persistente, resultante de fatores culturais, econômicos e estruturais. Essa realidade demanda reflexão, uma vez que compromete o exercício pleno da cidadania e o bem-estar coletivo.";
-  } else if (tipo === 'desenv') {
+    texto = "[Contextualização]. No Brasil hodierno, lamentavelmente, o(a) [tema-problema] ainda persiste como problema para muitos brasileiros que sofrem com [principal consequência do tema-problema]. Tal questão cresce apoiada não só na(o) [causa 1], como também na(o) [causa 2] e deve ser criticamente analisada.";
+  } else if (tipo === 'exem1') {
+    idAlvo = "intro-modelo";
+    texto = "Na canção “Cálice”, de Chico Buarque e Gilberto Gil, a denúncia sobre silenciamento e falta de acesso a direitos fundamentais se mostra emblemática na história brasileira. No Brasil hodierno, lamentavelmente, a precariedade na oferta e qualidade da educação ainda persiste como problema para muitos brasileiros que sofrem com a limitação de oportunidades e a exclusão social. Tal questão cresce apoiada não só na insuficiência de investimentos governamentais, como também na falta de políticas públicas eficazes e deve ser criticamente analisada.";
+  } if (tipo === 'desenv') {
     idAlvo = "desenv-modelo";
-    texto = "Primeiramente, é necessário destacar que a ausência de políticas públicas eficazes contribui para a manutenção do problema. De acordo com dados de instituições de pesquisa, a falta de investimento e de estratégias abrangentes dificulta a solução, afetando diretamente a qualidade de vida da população. Além disso, essa lacuna gera desigualdade e perpetua situações de vulnerabilidade social.\n\nOutro aspecto relevante é a influência da desinformação. Em um contexto de rápido acesso à internet, informações falsas ou superficiais moldam opiniões e dificultam o entendimento crítico sobre o tema. Assim, a conscientização e a promoção de debates fundamentados tornam-se passos essenciais para qualquer avanço.";
-  } else if (tipo === 'conc') {
+    texto = "Primeiramente, é fundamental reconhecer que a fragilização das políticas públicas voltadas para o enfrentamento do [tema/problema] compromete diretamente a manutenção e expansão de infraestrutura(as) [socioeducacionais/ socioeconômicas/ socioambientais....]. Isso se evidencia quando analisamos que [explicação detalhada sobre o impacto da falta dessas infraestruturas no tema]. Como destaca [autor ou organização], “[citação que reforça a gravidade do problema]”. Dessa forma, observa-se que essa realidade gera [consequência 1], afetando a vida cotidiana da população, além de provocar [consequência 2], que contribui para o aprofundamento das desigualdades sociais. Além disso, é imprescindível analisar como a insuficiência da(as) infraestrutura(as) [ socioeducacionais/socioeconômicas/socioambientais] compromete a efetividade das políticas públicas relacionadas a [tema/problema]. Observa-se que a falta de [ação 1] e [ação 2] por parte do Estado resulta em consequências preocupantes, como [consequência 1], que limita o acesso e a qualidade dos serviços oferecidos, além de [consequência 2], que amplia as desigualdades já existentes. Conforme aponta [autor/organização], “[citação que reforça a importância da ação estatal]”, evidenciando a necessidade urgente de intervenções mais eficazes.";
+  } else if (tipo === 'exem2') {
+    idAlvo = "desenv-modelo";
+    texto = "Primeiramente, é fundamental reconhecer que a fragilização das políticas públicas voltadas para o enfrentamento da educação compromete diretamente a manutenção e expansão de infraestruturas socioeducacionais, como escolas bem estruturadas e laboratórios equipados. Isso se evidencia quando analisamos que a falta dessas infraestruturas prejudica o aprendizado e limita o desenvolvimento pleno dos alunos, especialmente nas regiões mais vulneráveis. Como destaca o Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), 'a insuficiência de infraestrutura adequada impacta negativamente o desempenho acadêmico e a permanência dos estudantes na escola'. Dessa forma, observa-se que essa realidade gera altas taxas de evasão escolar, afetando a vida cotidiana da população, além de provocar o aprofundamento das desigualdades sociais no acesso à educação. Além disso, é imprescindível analisar como a insuficiência das infraestruturas socioeducacionais compromete a efetividade das políticas públicas relacionadas à educação. Observa-se que a falta de investimento contínuo e programas de manutenção por parte do Estado resulta em consequências preocupantes, como a precarização das condições de ensino, que limita a qualidade dos serviços oferecidos, além da exclusão social crescente, que amplia as desigualdades já existentes. Conforme aponta o Ministério da Educação, 'a melhoria da infraestrutura escolar é condição imprescindível para a promoção da equidade e da qualidade na educação básica', evidenciando a necessidade urgente de intervenções mais eficazes.";
+  } if (tipo === 'conc') {
     idAlvo = "conc-modelo";
     texto = "Portanto, para resolver de maneira efetiva [o problema abordado], é fundamental que [quem está envolvido ou será beneficiado] se comprometa a [o quê será feito para solucionar o problema], utilizando estratégias bem definidas, como [como essa ação será realizada]. Esse compromisso deve ser mantido com o objetivo claro de [para quê essa solução existe / qual o objetivo final], buscando não apenas uma solução imediata, mas impactos positivos duradouros.";
   } else if (tipo === 'exem3') {
     idAlvo = "conc-modelo";
     texto = "Portanto, para resolver de maneira efetiva o problema da poluição ambiental, é fundamental que governos, empresas e comunidades locais se comprometam a promover campanhas educativas abrangentes e implementar políticas de controle eficazes, utilizando estratégias bem definidas, como a conscientização pública contínua e a criação de leis ambientais rigorosas e fiscalizadas. Esse compromisso deve ser mantido com o objetivo claro de garantir a preservação dos recursos naturais para as futuras gerações, além de promover um ambiente saudável e equilibrado para toda a população.";
+  } if (tipo === 'reda') {
+    idAlvo = "reda-modelo";
+    texto = "[Contextualização]. No Brasil hodierno, lamentavelmente, o(a) [tema-problema] ainda persiste como problema para muitos brasileiros que sofrem com [principal consequência do tema-problema]. Tal questão cresce apoiada não só na(o) [causa 1], como também na(o) [causa 2] e deve ser criticamente analisada. Primeiramente, é fundamental reconhecer que a fragilização das políticas públicas voltadas para o enfrentamento do [tema/problema] compromete diretamente a manutenção e expansão de infraestrutura(as) [socioeducacionais/ socioeconômicas/ socioambientais....]. Isso se evidencia quando analisamos que [explicação detalhada sobre o impacto da falta dessas infraestruturas no tema]. Como destaca [autor ou organização], '[citação que reforça a gravidade do problema]'. Dessa forma, observa-se que essa realidade gera [consequência 1], afetando a vida cotidiana da população, além de provocar [consequência 2], que contribui para o aprofundamento das desigualdades sociais. Além disso, é imprescindível analisar como a insuficiência da(as) infraestrutura(as) [ socioeducacionais/socioeconômicas/socioambientais] compromete a efetividade das políticas públicas relacionadas a [tema/problema]. Observa-se que a falta de [ação 1] e [ação 2] por parte do Estado resulta em consequências preocupantes, como [consequência 1], que limita o acesso e a qualidade dos serviços oferecidos, além de [consequência 2], que amplia as desigualdades já existentes. Conforme aponta [autor/organização], '[citação que reforça a importância da ação estatal]', evidenciando a necessidade urgente de intervenções mais eficazes. Portanto, para resolver de maneira efetiva [o problema abordado], é fundamental que [quem está envolvido ou será beneficiado] se comprometa a [o quê será feito para solucionar o problema], utilizando estratégias bem definidas, como [como essa ação será realizada]. Esse compromisso deve ser mantido com o objetivo claro de [para quê essa solução existe / qual o objetivo final], buscando não apenas uma solução imediata, mas impactos positivos duradouros.";
+  } else if (tipo === 'exem4') {
+    idAlvo = "reda-modelo";
+    texto = "No filme 'Que Horas Ela Volta?', dirigido por Anna Muylaert, fica evidente a disparidade social e educacional entre diferentes classes no Brasil, revelando como essas desigualdades impactam a vida de muitas famílias brasileiras. No Brasil hodierno, lamentavelmente, a precariedade na oferta e qualidade da educação ainda persiste como problema para muitos brasileiros que sofrem com a limitação de oportunidades e a exclusão social. Tal questão cresce apoiada não só na insuficiência de investimentos públicos, como também na falta de políticas públicas eficazes e deve ser criticamente analisada. Primeiramente, é fundamental reconhecer que a fragilização das políticas públicas voltadas para o enfrentamento da educação compromete diretamente a manutenção e expansão de infraestruturas socioeducacionais, como escolas bem estruturadas e laboratórios equipados. Isso se evidencia quando analisamos que a falta dessas infraestruturas prejudica o aprendizado e limita o desenvolvimento pleno dos alunos, especialmente nas regiões mais vulneráveis. Como destaca o Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), 'a insuficiência de infraestrutura adequada impacta negativamente o desempenho acadêmico e a permanência dos estudantes na escola'. Dessa forma, observa-se que essa realidade gera altas taxas de evasão escolar, afetando a vida cotidiana da população, além de provocar o aprofundamento das desigualdades sociais no acesso à educação. Além disso, é imprescindível analisar como a insuficiência das infraestruturas socioeducacionais compromete a efetividade das políticas públicas relacionadas à educação. Observa-se que a falta de investimento contínuo e programas de manutenção por parte do Estado resulta em consequências preocupantes, como a precarização das condições de ensino, que limita a qualidade dos serviços oferecidos, além da exclusão social crescente, que amplia as desigualdades já existentes. Conforme aponta o Ministério da Educação, 'a melhoria da infraestrutura escolar é condição imprescindível para a promoção da equidade e da qualidade na educação básica', evidenciando a necessidade urgente de intervenções mais eficazes. Portanto, para resolver de maneira efetiva a precariedade na educação pública, é fundamental que o governo, gestores escolares e a sociedade civil se comprometam a promover investimentos regulares e estratégicos na infraestrutura escolar, utilizando estratégias bem definidas, como a criação de programas de manutenção contínua e modernização das instalações. Esse compromisso deve ser mantido com o objetivo claro de garantir o acesso universal e a qualidade do ensino, buscando não apenas uma solução imediata, mas impactos positivos duradouros para o desenvolvimento social e a redução das desigualdades no país.";
   }
-
   const el = document.getElementById(idAlvo);
   if (el.innerText === texto) {
     el.innerText = "";
   } else {
     el.innerText = texto;
-  }
-}
-
-function mostrarModeloCompleto(tipo) {
-  let redacao = "";
-  const el = document.getElementById("redacao-completa");
-
-  if (tipo === "base") {
-    redacao = `Ao longo da história, diversos pensadores refletiram sobre os impactos sociais de questões que afetam o desenvolvimento humano. No Brasil contemporâneo, percebe-se que [tema aqui] representa um desafio persistente, resultante de fatores culturais, econômicos e estruturais. Essa realidade demanda reflexão, uma vez que compromete o exercício pleno da cidadania e o bem-estar coletivo.
-
-Primeiramente, é necessário destacar que a ausência de políticas públicas eficazes contribui para a manutenção do problema. De acordo com dados de instituições de pesquisa, a falta de investimento e de estratégias abrangentes dificulta a solução, afetando diretamente a qualidade de vida da população. Além disso, essa lacuna gera desigualdade e perpetua situações de vulnerabilidade social.
-
-Outro aspecto relevante é a influência da desinformação. Em um contexto de rápido acesso à internet, informações falsas ou superficiais moldam opiniões e dificultam o entendimento crítico sobre o tema. Assim, a conscientização e a promoção de debates fundamentados tornam-se passos essenciais para qualquer avanço.
-
-Portanto, é imprescindível que o Estado, por meio de órgãos competentes, desenvolva campanhas educativas e invista em políticas públicas integradas, com a participação da sociedade civil. Dessa forma, será possível criar um ambiente favorável à superação de desafios e à construção de uma sociedade mais justa e igualitária.`;
-  } else if (tipo === "nota1000") {
-    redacao = ` Enem 2024 Sabrina Ayumi Alves, de Araçatuba (SP)
-
-    O livro “Nós matamos o cão tinhoso” de Luís Bernardo Honwana retrata a sociedade moçambicana durante a colonização portuguesa. Na obra literária, observa-se uma dinâmica social pautada pela inferiorização dos indivíduos negros, na qual o racismo está enraizado nas interações entre as pessoas, na qualidade de vida e na autoimagem de cada ser. Assim, ao inserir a imagem criada pelo livro no contexto brasileiro de ínfima valorização da herança africana, infere-se que o passado colonial persiste nas estruturas do Brasil, se manifestando a partir do apagamento sistemático da cultura afro-brasileira. Em razão disso, deve-se discutir o papel do Estado no setor escolar e cultural diante desse contexto de silenciamento.
-
-Em um primeiro momento, é necessário entender a relação entre a dinâmica social brasileira e a desvalorização da herança africana. Para fundamentar essa ideia, o filósofo Ailton Krenak afirma que, no Brasil, existem dois grupos — a humanidade, formada pela elite econômica, e a subumanidade, a qual tem seus direitos negados e é constituída principalmente pelas populações marginalizadas socialmente, como os povos originários e os negros. Por conseguinte, entende-se que o apagamento da cultura africana é uma extensão do panorama da desigualdade social brasileira, já que essa desvalorização sistemática silencia as vozes de populações que são violentadas e oprimidas há séculos, o que favorece a manutensão dessas pessoas no grupo da subumanidade. Dessa forma, o Estado deve desenvolver medidas que visem valorizar e apoiar artistas e escritores relacionados à herança africana no Brasil.
-
-Sob outra ótica, a compreensão acerca da importância da ancestralidade na formação da autoimagem e da noção de pertencimento de cada indivíduo é imperativa. Para isso, a filósofa brasileira Marilena Chaui defende a ideia de que, enquanto os animais são seres naturais, os humanos são culturais – ou seja, a cultura em que cada pessoa está inserida compõe a essência desse ser. A partir disso, compreende-se que o silenciamento da herança africana nega a uma grande parte do povo brasileiro a sua própria essência, o que constitui uma violência estrutural e resulta numa noção de não pertencimento generalizada e em uma autoimagem defasada. Frente a isso, o Estado deve agir em prol da promoção de manifestações culturais afro-brasileiras.
-
-Em suma, conclui-se que a desvalorização da cultura africana está diretamente relacionada a um processo sistemático de silenciamento de grupos oprimidos e resulta na falta de pertencimento de muitos indivíduos. Portanto, cabe ao Estado, por meio de uma parceria entre o Ministério da Economia (ME) e o Ministério da Educação e da Cultura (MEC), desenvolver manifestações culturais afro-brasileiras nas escolas, como, por exemplo, peças teatrais e festivais de dança, música e arte, assim como investir financeiramente na promoção de artistas e escritores que têm suas carreiras relacionadas à herança africana. Por fim, essas ações serão responsáveis por impedir o perpetuamento da desvalorização da cultura africana no Brasil.`;
-  }
-
-  if (el.innerText === redacao) {
-    el.innerText = "";
-  } else {
-    el.innerText = redacao;
   }
 }
 
@@ -61,7 +59,10 @@ const dicas = [
   "Use conectivos como 'além disso', 'portanto', 'consequentemente'.",
   "Cite repertórios socioculturais (filmes, livros, fatos históricos).",
   "Evite repetir palavras ou ideias próximas umas das outras.",
-  "Na conclusão, apresente uma proposta com quem, como e para quê."
+  "Nunca esqueça de dar um espaço antes de cada parágrafo",
+  "Na conclusão, apresente uma proposta com quem, como e para quê.",
+  "Não se prenda apenas em uma estrutura de redação",
+
 ];
 
 function mostrarDica() {
